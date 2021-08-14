@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="clicking-method"></p>
+    <input id="field-name" type="text">
+    <button id="update-name">Update</button>
+
+    <button onclick="handleJustFunctionOnClick()">Just Function</button>
+    <button id="handle-event">Direct Add Event Listener</button>
+
+    
+    
+    
+    
+    <script>
+        // Using Function 
+        function handleJustFunctionOnClick(){
+            const p = document.getElementById('clicking-method');
+            p.innerText = 'set by using Function';
+        }
+
+        //Direct Methods
+        document.getElementById('handle-event').addEventListener('click', function(){
+            const p = document.getElementById('clicking-method');
+            p.innerText = 'Set By using Direct Function';
+        })
+
+        // Direct methods for Input Field
+        document.getElementById('update-name').addEventListener('click', function(){
+            const fieldName = document.getElementById('field-name');
+            const p = document.getElementById('clicking-method');
+            p.innerText = fieldName.value;
+            // Remove Text field Placeholder
+            fieldName.value = '';
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Event Babul Bhai</h2>
+    <section id="section-container">
+        <h4>Babul Bhai list</h4>
+        <ul id="list-container">
+            <li class="item">Lorem, ipsum.</li>
+            <li id="second-item" class="item">Facilis, repudiandae?</li>
+            <li class="item">Deserunt, maiores?</li>
+            <li class="item">Obcaecati, quidem.</li>
+            <li class="item">Quo, veniam?</li>
+            <li class="item">Ab, reprehenderit.</li>
+        </ul>
+    </section>
+
+    <script>
+        document.getElementById('second-item').addEventListener('click', function(event){
+            console.log('second item clicked');
+            event.stopPropagation();
+        })
+
+        //UL 
+        document.getElementById('list-container').addEventListener('click', function(){
+            console.log('ul clicked');
+        })
+        //section
+        document.getElementById('section-container').addEventListener('click', function(){
+            console.log('section clicked');
+        })
+    </script>
+
+<!-- 
+What is event bubble | an interview question
+
+tumi jokhon onek gula parent ebong child er moddhe event handler add koro tahole prothome capture korar pore  se sob cheye lowest element ke age event ke triger korbe tarpor tar uporerta tarpor tar uporerta ebhabe kore korte thakbe.. etake bole event bubble
+
+
+How to stop Event Bubble? | an interview question
+
+event.stopPropagation(); diye stop kora hoy.
+ --> 
+
+</body>
+</html>
